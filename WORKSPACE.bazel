@@ -1,0 +1,46 @@
+workspace(
+    name = "rules_haskell_invalid_byte_sequence",
+)
+
+load(
+    "@bazel_tools//tools/build_defs/repo:http.bzl",
+    "http_archive",
+)
+
+http_archive(
+    name = "rules_haskell",
+    sha256 = "5778f69448b775ee96ee26439e3624db540a9e515caa46aa2eff99f9c91ab849",
+    strip_prefix = "rules_haskell-1fedad7e64ea00ecf1bcb4be70ca51a11dc48312",
+    urls = [
+        "https://github.com/tweag/rules_haskell/archive/1fedad7e64ea00ecf1bcb4be70ca51a11dc48312.zip",
+    ],
+)
+
+load(
+    "@rules_haskell//haskell:repositories.bzl",
+    "rules_haskell_dependencies",
+)
+
+rules_haskell_dependencies()
+
+load(
+    "@rules_haskell//haskell:toolchain.bzl",
+    "rules_haskell_toolchains",
+)
+
+rules_haskell_toolchains(
+    version = "8.8.2",
+)
+
+load(
+    "@rules_haskell//haskell:cabal.bzl",
+    "stack_snapshot",
+)
+
+stack_snapshot(
+    name = "stackage",
+    packages = [
+        "path-io",
+    ],
+    snapshot = "lts-15.0",
+)

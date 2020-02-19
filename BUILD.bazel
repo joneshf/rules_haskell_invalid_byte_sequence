@@ -1,0 +1,11 @@
+load(
+    "@rules_haskell//haskell:defs.bzl",
+    "haskell_library",
+)
+
+haskell_library(
+    deps = [
+        "@stackage//:path-io",
+    ],
+    name = "invalid_byte_sequence",
+)
