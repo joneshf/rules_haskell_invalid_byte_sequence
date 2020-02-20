@@ -9,10 +9,10 @@ load(
 
 http_archive(
     name = "rules_haskell",
-    sha256 = "5778f69448b775ee96ee26439e3624db540a9e515caa46aa2eff99f9c91ab849",
-    strip_prefix = "rules_haskell-1fedad7e64ea00ecf1bcb4be70ca51a11dc48312",
+    sha256 = "5bc145adc1e1052dcf3a23f8646bc024a30678a48d25d7a65d1b002db62b5a79",
+    strip_prefix = "rules_haskell-423734f898a855a082c87dec5efab1a7c48b8bd2",
     urls = [
-        "https://github.com/tweag/rules_haskell/archive/1fedad7e64ea00ecf1bcb4be70ca51a11dc48312.zip",
+        "https://github.com/joneshf/rules_haskell/archive/423734f898a855a082c87dec5efab1a7c48b8bd2.zip",
     ],
 )
 
@@ -29,6 +29,7 @@ load(
 )
 
 rules_haskell_toolchains(
+    locale = "en_US.UTF-8",
     version = "8.8.2",
 )
 
